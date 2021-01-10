@@ -1,0 +1,16 @@
+{
+    "extends": ["eslint:recommended"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "tsconfig.json",
+        "tsconfigRootDir": "./"
+    },
+    "plugins": ["@typescript-eslint"],
+    "env": {
+        "es6": true
+    },
+    "globals": {},
+    "rules": {
+        "semi": ["error", "never"]
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "includes": ["src/**/*.ts", "test/**/*.ts"],
+    "compilerOptions": {
+        "target": "es5",
+        "module": "es2015",
+        "lib": ["es6", "es2019", "dom"],
+        "allowJs": false,
+        "checkJs": false,
+        "outDir": "dist",
+        "rootDir": "./",
+        "strict": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": false,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
+    }
+}

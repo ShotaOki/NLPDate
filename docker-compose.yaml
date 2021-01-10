@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+    main:
+        build: 
+            context: ./docker
+        volumes: 
+            - "./main:/root/project/main"
+
+

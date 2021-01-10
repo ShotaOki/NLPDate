@@ -1,0 +1,6 @@
+{
+  "editor.formatOnSave": true,
+  "eslint.workingDirectories": [
+    { "directory": "./main", "changeProcessCWD": true }
+  ]
+}

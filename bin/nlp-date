@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+var NLPDate = require("../modern/nlpdate-main.min.js");
+var argv = {
+  value: "現在",
+  format: "ISO8601",
+};
+var key = "value";
+var mapper = {
+  "-f": "--format",
+  "-h": "--help",
+  "-v": "--version",
+};
+process.argv.slice(2).forEach((item) => {
+  if (item.startsWith("-") && item in mapper) {
+    item = mapper[item];
+  }
+  if (item.startsWith("--")) {
+    key = item.substring(2);
+  } else if (key != "") {
+    argv[key] = item;
+    key = "";
+  }
+});
+
+process.title = "nlp-date";
+
+if (argv["help"]) {
+  console.log(
+    [
+      "usage: nlp-date [Date Message] --format [Format]",
+      "or, nlp-date [Date Message] -f [Format]",
+      "",
+      "options:",
+      "  -f --format        Set Date format.",
+      "  -h --help          Print this list and exit.",
+      "  -v --version       Print the version and exit.",
+    ].join("\n")
+  );
+  process.exit();
+}
+
+console.log(NLPDate(argv["value"]).asString(argv["format"]));
