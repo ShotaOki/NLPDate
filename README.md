@@ -22,14 +22,14 @@ A JavaScript date library for Parse, manipulate, and formatting. Users can write
 以下のテキストを HTML のヘッダに置いてください<br />
 
 ```html
-<script src="https://<url>/nlpdate/0.0.1/modern/nlpdate-main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ShotaOki/NLPDate@v0.0.1/modern/nlpdate-main.min.js"></script>
 ```
 
 ※もし IE11 で動かす必要があれば、上のリンクの代わりにこちらを置いてください。
 
 ```html
 <!-- ES2015版：新しいブラウザのほか、IE11でも動きます。通常版よりもファイルサイズが大きくなります -->
-<script src="https://<url>/nlpdate/0.0.1/es2015/nlpdate-main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ShotaOki/NLPDate@v0.0.1/es2015/nlpdate-main.min.js"></script>
 ```
 
 ## 基本的な使い方
@@ -63,9 +63,7 @@ let text = NLPDate(
 ).asString("日本語の年月日");
 ```
 
-変換できる文章の例は、こちらのサンプルでご確認ください。
-
-http://**\_\_\_\_**.com
+変換できる文章の例は、<a href = "https://shotaoki.github.io/NLPDate.github.io/index.html">こちらのドキュメント</a>でご確認ください。
 
 ## 変換メソッド
 
