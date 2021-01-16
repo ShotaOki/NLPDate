@@ -1,5 +1,9 @@
 # NLPDate
 
+[![Circle CI](https://circleci.com/gh/ShotaOki/NLPDate.svg?style=svg)](CIRCLECI)
+[![Maintainability](https://api.codeclimate.com/v1/badges/37f152e8e132e9c2bb9f/maintainability)](https://codeclimate.com/github/ShotaOki/NLPDate/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/37f152e8e132e9c2bb9f/test_coverage)](https://codeclimate.com/github/ShotaOki/NLPDate/test_coverage)
+
 A JavaScript date library for Parse, manipulate, and formatting. Users can write it using Natural Language.
 
 # コンセプト
