@@ -1,0 +1,46 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/project
+    docker:
+      - image: circleci/node:15.3.0
+        user: root
+    steps:
+      - checkout
+      - run:
+          name: install-npm-wee
+          working_directory: ~/project/main
+          command: npm install
+      - run:
+          name: install-npm-circleci
+          working_directory: ~/project/main
+          command: npm install mocha-junit-reporter@2.0.0
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: test
+          working_directory: ~/project/main
+          command: ./node_modules/.bin/nyc ./node_modules/.bin/mocha --require ts-node/register --watch-extensions ts \"test/**/*.ts\" --reporter mocha-junit-reporter --reporter-options mochaFile=report/mocha/test-results.xml
+      - run:
+          name: Code Climate
+          working_directory: ~/project/main
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+            ./cc-test-reporter before-build
+      - run:
+          name: code-coverage
+          working_directory: ~/project/main
+          command: |
+            mkdir coverage
+            ./node_modules/.bin/nyc report --reporter=text-lcov > coverage/lcov.info
+            ./cc-test-reporter after-build -t lcov
+      - store_test_results:
+          path: report
+      - store_artifacts:
+          path: main/report/mocha/test-results.xml
+      - store_artifacts:
+          path: main/coverage/lcov.info
+          prefix: tests
