@@ -1,3 +1,5 @@
 node_modules/
 doc/
 nlpdate-main.develop.js
+main/.nyc_output/
+

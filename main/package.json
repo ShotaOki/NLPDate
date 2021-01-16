@@ -11,7 +11,8 @@
         "release_build": "webpack --mode production",
         "format": "prettier --write \"src/**/*.ts\"",
         "document": "typedoc --out ../doc/main/ ./src",
-        "test": "npx mocha --require ts-node/register --watch-extensions ts \"test/**/*.ts\""
+        "test": "npx mocha --require ts-node/register --watch-extensions ts \"test/**/*.ts\"",
+        "code-coverage": "nyc mocha --require ts-node/register --watch-extensions ts \"test/**/*.ts\""
     },
     "author": "Shota Oki",
     "license": "MIT",
@@ -30,6 +31,7 @@
         "core-js": "^3.8.2",
         "mocha": "^8.2.1",
         "mocha-loader": "^5.1.5",
+        "nyc": "^15.1.0",
         "prettier": "^2.2.1",
         "ts-loader": "^8.0.12",
         "ts-node": "^9.1.1",
