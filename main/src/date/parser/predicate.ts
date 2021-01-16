@@ -688,7 +688,7 @@ export const PredicateList = [
                 '平成元年',
             ],
         },
-        extra: [{ key: 'wareki', value: '令和' }],
+        extra: [{ key: 'wareki', value: '平成' }],
         parser: function (date, args, config, predicate_list) {
             const year = Wareki.toFullYear('平成', 1);
             return DateUtility.control(
